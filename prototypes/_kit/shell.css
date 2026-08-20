@@ -1,0 +1,110 @@
+/* ════════════════════════════════════════════════════════════════════
+   QATO prototype kit · shell.css
+   Универсальная оболочка + общие компоненты для всех прототипов.
+   Скелеты конкретных экранов (редактор, список, настройки) сюда НЕ кладём —
+   они живут в _kit/screens/. Здесь только то, что общее для любого прототипа.
+   Зависит от tokens.css.
+   ════════════════════════════════════════════════════════════════════ */
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+body { font-family:'Golos Text',sans-serif; -webkit-font-smoothing:antialiased;
+  background:var(--slate-100); color:var(--text-primary); height:100vh; overflow:hidden; font-size:14px;
+  display:flex; flex-direction:column; }
+
+/* ── scenbar (баннер управления сценариями — обязателен) ───────────── */
+.scenbar{background:var(--bg-solid);color:#fff;padding:8px 16px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;font-size:12px;flex-shrink:0;z-index:300}
+.scenbar .sb-left{justify-self:start;display:flex;align-items:center;gap:10px}
+.scenbar .sb-right{justify-self:end;display:flex;align-items:center;gap:8px}
+.scenbar .sb-center{justify-self:center;display:flex;align-items:center;gap:8px}
+.scenbar .pill{background:rgba(255,255,255,.14);border-radius:6px;padding:2px 7px}
+.scenbar select{font-family:inherit;font-size:13px;background:#2A2E35;color:#fff;border:1px solid #3A3F47;border-radius:8px;padding:6px 10px;min-width:380px}
+.scenbar .navbtn{background:#2A2E35;border:1px solid #3A3F47;border-radius:8px;width:30px;height:30px;color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.scenbar .navbtn:hover{background:#3A3F47}
+.scenbar .resetbtn{background:none;border:none;color:rgba(255,255,255,.55);font-family:inherit;font-size:12px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.scenbar .resetbtn:hover{color:#fff}
+
+/* ── stage / screens (переключение состояний) ──────────────────────── */
+#stage { flex:1; min-height:0; }
+.screen { display:none; height:100%; }
+.screen.active { display:flex; flex-direction:column; }
+
+/* ── app layout: icon rail 56 + content card + sidebar ─────────────── */
+.app-shell { flex:1; min-height:0; display:flex; }
+.rail{width:56px;flex-shrink:0;padding:12px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.rail .logo{width:32px;height:32px;border-radius:8px;background:var(--action-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.rail .sep,.rail-sep{width:32px;height:1px;background:var(--border-primary);margin:4px 0;flex-shrink:0}
+.rail-nav{display:flex;flex-direction:column;gap:8px}
+.rail-btn{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text-secondary);background:transparent;border:none;cursor:pointer}
+.rail-btn svg{width:16px;height:16px}
+.rail-btn:hover{background:var(--action-secondary-hover);color:var(--text-primary)}
+.rail-btn.active{background:var(--action-secondary-pressed);color:var(--text-primary)}
+.rail .avatar{margin-top:auto;width:32px;height:32px;border-radius:9999px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--text-secondary)}
+
+.content-card{flex:1;min-width:0;background:var(--bg-canvas);border-radius:16px 0 0 0;margin-top:0;display:flex;flex-direction:column;overflow:hidden}
+.sidebar{width:320px;flex-shrink:0;border-right:1px solid var(--border-secondary);display:flex;flex-direction:column;overflow:hidden}
+.main-area{flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+
+/* ── buttons ───────────────────────────────────────────────────────── */
+.btn { display:inline-flex; align-items:center; gap:6px; border:none; border-radius:8px; cursor:pointer;
+  font-family:'Golos Text',sans-serif; font-weight:500; white-space:nowrap; transition:background .12s; font-size:13px; }
+.btn:disabled,.btn.is-disabled { opacity:.45; cursor:not-allowed; }
+.btn-lg { height:40px; padding:0 16px; font-size:15px; }
+.btn-md { height:32px; padding:0 12px; }
+.btn-sm { height:28px; padding:0 10px; font-size:12px; }
+.btn-icon { padding:0; justify-content:center; }
+.btn-icon.btn-lg{width:40px;} .btn-icon.btn-md{width:32px;} .btn-icon.btn-sm{width:28px;}
+.btn-primary { background:var(--action-primary); color:#fff; } .btn-primary:hover{background:var(--action-primary-hover);}
+.btn-secondary { background:var(--slate-100); color:var(--text-primary); } .btn-secondary:hover{background:var(--slate-200);}
+.btn-outline { background:transparent; border:1px solid var(--border-secondary); color:var(--text-primary); } .btn-outline:hover{background:var(--slate-50);}
+.btn-ghost { background:transparent; color:var(--text-secondary); } .btn-ghost:hover{background:var(--slate-100); color:var(--text-primary);}
+.btn-danger { background:var(--red-700); color:#fff; } .btn-danger:hover{background:var(--red-900);}
+
+/* ── tooltip (верхние элементы: показывай снизу, см. ловушки) ──────── */
+.tip-wrap { position:relative; display:inline-flex; }
+.tip-wrap[data-tip]:hover::after { content:attr(data-tip); position:absolute; bottom:calc(100% + 8px); left:50%;
+  transform:translateX(-50%); background:#1C2024; color:#fff; padding:7px 10px; border-radius:8px; font-size:12px;
+  line-height:1.35; white-space:normal; width:230px; text-align:center; z-index:80; box-shadow:var(--shadow-menu); }
+.tip-wrap.tip-below[data-tip]:hover::after { bottom:auto; top:calc(100% + 8px); }
+
+/* ── badges ────────────────────────────────────────────────────────── */
+.badge { display:inline-flex; align-items:center; gap:4px; height:22px; padding:0 8px; border-radius:9999px;
+  font-size:12px; font-weight:500; white-space:nowrap; flex-shrink:0; }
+.badge-done{background:var(--green-100);color:var(--green-900);}
+.badge-needs{background:var(--orange-100);color:var(--orange-900);}
+.badge-violet{background:var(--violet-100);color:var(--violet-900);}
+.badge-fail{background:var(--red-100);color:var(--red-900);}
+.badge-info{background:var(--blue-100);color:var(--blue-900);}
+.badge-sec{background:var(--slate-100);color:var(--text-secondary);}
+
+/* ── kebab/dropdown menu ───────────────────────────────────────────────
+   ⚠️ ВСЕГДА открывай через openMenu() из proto.js (position:fixed по rect
+   кнопки). .menu внутри карточки с overflow:hidden обрежется. Базовый стиль
+   ниже — на случай меню вне обрезающих контейнеров. */
+.menu { position:absolute; top:calc(100% + 4px); right:0; background:#fff; border:1px solid var(--border-secondary); border-radius:8px; box-shadow:var(--shadow-menu); padding:4px; min-width:210px; z-index:60; display:none; }
+.menu.open { display:block; }
+.menu-item { display:flex; align-items:center; gap:8px; height:34px; padding:0 10px; border-radius:6px; font-size:13px; cursor:pointer; }
+.menu-item:hover { background:var(--slate-50); }
+.menu-item.danger { color:var(--red-900); }
+.menu-sep { height:1px; background:var(--border-secondary); margin:4px 0; }
+
+/* ── overlay / modal ───────────────────────────────────────────────── */
+.overlay { display:none; position:fixed; inset:0; background:rgba(28,32,36,.5); z-index:500; align-items:center; justify-content:center; }
+.overlay.open { display:flex; }
+.modal { background:#fff; border-radius:16px; box-shadow:var(--shadow-pop); width:480px; max-width:92vw; max-height:84vh; overflow:hidden; display:flex; flex-direction:column; }
+.modal.wide { width:560px; }
+.modal-head { padding:20px 24px 0; display:flex; gap:12px; }
+.modal-title { font-size:17px; font-weight:700; }
+.modal-sub { font-size:13px; color:var(--text-secondary); margin-top:3px; line-height:1.5; }
+.modal-body { padding:18px 24px; overflow-y:auto; }
+.modal-foot { padding:14px 24px; border-top:1px solid var(--border-secondary); display:flex; gap:8px; justify-content:flex-end; }
+
+/* ── toast (правый верхний угол — Sonner, см. reference-toast-position) ── */
+.toast-wrap { position:fixed; top:60px; right:24px; z-index:600; display:flex; flex-direction:column; gap:8px; }
+.toast { display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--border-secondary); border-radius:12px; box-shadow:var(--shadow-menu); padding:12px 16px; font-size:13px; font-weight:500; min-width:300px; animation:slidein .2s ease; }
+.toast .t-ico { width:24px; height:24px; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.t-ico.green{background:var(--green-100);color:var(--green-600);}
+.t-ico.violet{background:var(--violet-100);color:var(--violet-600);}
+.t-ico.red{background:var(--red-100);color:var(--red-700);}
+.toast small{display:block;font-weight:400;color:var(--text-secondary);margin-top:1px;}
+@keyframes slidein { from{opacity:0;transform:translateX(16px);} to{opacity:1;transform:none;} }

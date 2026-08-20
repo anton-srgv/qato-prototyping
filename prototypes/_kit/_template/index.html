@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440, initial-scale=1">
+<title>QATO-XXXX — прототип</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- kit: токены и оболочка копируются в папку задачи (см. _kit/README.md) -->
+<link rel="stylesheet" href="./tokens.css">
+<link rel="stylesheet" href="./shell.css">
+<style>
+  /* ── стили, специфичные для этого прототипа — поверх kit ──
+     Скелет конкретного экрана бери из _kit/screens/ или клонируй живой
+     компонент из ../qato/qautomator-ui (см. build-prototype). */
+</style>
+</head>
+<body>
+
+<!-- ── scenbar (обязателен) ─────────────────────────────────────────── -->
+<div class="scenbar">
+  <div class="sb-left"><b>QATO-XXXX</b><span class="pill">прототип</span></div>
+  <div class="sb-center">
+    <select id="scen-select">
+      <optgroup label="Экран">
+        <option value="scr-a">Сценарий A — …</option>
+        <option value="scr-b">Сценарий B — …</option>
+      </optgroup>
+    </select>
+    <button class="navbtn" data-action="prev-scen"><i data-lucide="chevron-left"></i></button>
+    <button class="navbtn" data-action="next-scen"><i data-lucide="chevron-right"></i></button>
+  </div>
+  <div class="sb-right">
+    <button class="resetbtn" data-action="reset"><i data-lucide="rotate-ccw" width="13" height="13"></i> сброс</button>
+  </div>
+</div>
+
+<!-- ── stage: по одному .screen на сценарий ─────────────────────────── -->
+<div id="stage">
+  <section class="screen" id="scr-a">
+    <div class="app-shell">
+      <!-- icon rail -->
+      <nav class="rail">
+        <div class="logo">Q</div>
+        <div class="rail-sep"></div>
+        <div class="rail-nav">
+          <button class="rail-btn active"><i data-lucide="layout-grid"></i></button>
+          <button class="rail-btn"><i data-lucide="folder"></i></button>
+          <button class="rail-btn"><i data-lucide="settings"></i></button>
+        </div>
+        <div class="avatar">АС</div>
+      </nav>
+      <!-- content card -->
+      <div class="content-card">
+        <!-- сюда — скелет экрана -->
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="scr-b">
+    <!-- второе состояние -->
+  </section>
+</div>
+
+<!-- Lucide иконки -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  // плоский список сценариев для стрелок ‹ › (порядок = порядок листания)
+  window.SCEN = ['scr-a','scr-b'];
+
+  // побочные эффекты при переключении состояния (бейджи, тексты, и т.п.)
+  window.applyScenario = function(id){
+    // if(id==='scr-b'){ ... }
+  };
+</script>
+<!-- общий рантайм kit: scenbar, меню, toast, переключение состояний -->
+<script src="./proto.js"></script>
+</body>
+</html>

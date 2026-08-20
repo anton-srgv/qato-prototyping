@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "unverified-step",
+    "name": "Unverified Step",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "active-step",
+    "name": "Active Step",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "step-with-error",
+    "name": "Step With Error",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "without-assertions",
+    "name": "Without Assertions",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "recording-step",
+    "name": "Recording Step",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "without-actions",
+    "name": "Without Actions",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-multiple-actions-and-results",
+    "name": "With Multiple Actions And Results",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "recording-with-original-action",
+    "name": "Recording With Original Action",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-variables",
+    "name": "With Variables",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-step-generation-error",
+    "name": "With Step Generation Error",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-action-generation-error",
+    "name": "With Action Generation Error",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-action-execution-error",
+    "name": "With Action Execution Error",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-fragile-x-path-action",
+    "name": "Fragile: XPath locator",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-mixed-locators",
+    "name": "Fragile: Mixed stable and fragile locators",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-dynamic-css-locator",
+    "name": "Fragile: Dynamic CSS class locator",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "with-fragile-assertion",
+    "name": "Fragile: XPath assertion",
+    "title": "Pages/RecipePage/StepCard"
+  },
+  {
+    "slug": "stable-locators",
+    "name": "Stable: data-testid, aria-role, text, css",
+    "title": "Pages/RecipePage/StepCard"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "environment",
+    "name": "Environment",
+    "title": "Templates/SettingsImport"
+  },
+  {
+    "slug": "integrations",
+    "name": "Integrations",
+    "title": "Templates/SettingsImport"
+  },
+  {
+    "slug": "members",
+    "name": "Members",
+    "title": "Templates/SettingsImport"
+  },
+  {
+    "slug": "project-context",
+    "name": "Project Context",
+    "title": "Templates/SettingsImport"
+  },
+  {
+    "slug": "import",
+    "name": "Import",
+    "title": "Templates/SettingsImport"
+  }
+]

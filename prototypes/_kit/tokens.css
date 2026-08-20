@@ -1,0 +1,61 @@
+/* ════════════════════════════════════════════════════════════════════
+   QATO prototype kit · tokens.css
+   Единственный источник правды по цветам/типографике — DESIGN.md.
+   Имена переменных = семантические токены DESIGN.md + короткие алиасы,
+   которыми реально пользуются прототипы. Не правь вручную под задачу —
+   при расхождении с DESIGN.md правь здесь и сверяйся с DESIGN.md.
+   ════════════════════════════════════════════════════════════════════ */
+:root {
+  /* text */
+  --text-primary:#1C2024; --text-secondary:#60646C; --text-disabled:#8B8D98;
+  --text-inverse:#FFFFFF; --text-error:#CE2C31;
+  --text-accent-info:#0D74CE; --text-accent-success:#218358;
+  --text-accent-warning:#CC4E00; --text-accent-violet:#6550B9;
+
+  /* backgrounds / surfaces */
+  --bg-canvas:#FFFFFF; --bg-surface-subtle:#F9F9FB; --bg-surface-primary:#FFFFFF;
+  --bg-surface-secondary:#F0F0F3; --bg-surface-solid:#1C2024;
+  --bg-solid:#1C2024;          /* алиас на surface-solid (scenbar, тёмные панели) */
+  --bg-secondary:#F0F0F3;      /* алиас */
+
+  /* actions */
+  --action-primary:#3E63DD; --action-primary-hover:#3358D4;
+  --action-primary-pressed:#3A5BC7; --action-primary-disabled:#ABBDF9;
+  --action-secondary:#F0F0F3; --action-secondary-hover:#E8E8EC; --action-secondary-pressed:#E0E1E6;
+  --action-destructive:#E5484D; --action-destructive-hover:#DC3E42;
+  --action-destructive-pressed:#CE2C31; --action-destructive-disabled:#F4A9AA;
+
+  /* borders */
+  --border-secondary:#E0E1E6; --border-primary:#CDCED6; --border-error:#F4A9AA; --border-focus:#E0E1E6;
+
+  /* semantic accents (surface = фон, solid = акцент) */
+  --accent-info-surface:#E6F4FE; --accent-info-solid:#0090FF;
+  --accent-success-surface:#E6F6EB; --accent-success-solid:#30A46C;
+  --accent-warning-surface:#FFEFD6; --accent-warning-solid:#F76B15;
+  --accent-error-surface:#FEEBEC; --accent-error-solid:#E5484D;
+  --accent-neutral-surface:#F0F0F3; --accent-neutral-solid:#1C2024;
+  --accent-violet-surface:#F4F0FE; --accent-violet-solid:#6E56CF;
+
+  /* slate scale */
+  --slate-50:#F9F9FB; --slate-100:#F0F0F3; --slate-200:#E8E8EC; --slate-300:#E0E1E6;
+  --slate-400:#D9D9E0; --slate-500:#CDCED6; --slate-600:#B9BBC6; --slate-700:#8B8D98;
+  --slate-800:#80838D; --slate-900:#60646C; --slate-default:#1C2024;
+
+  /* hue scales (DESIGN.md: solid = -700, dark = -900) */
+  --indigo-100:#EDF2FE; --indigo-200:#E1E9FF; --indigo-500:#ABBDF9;
+  --indigo-700:#3E63DD; --indigo-800:#3358D4; --indigo-900:#3A5BC7;
+  --red-100:#FEEBEC; --red-500:#F4A9AA; --red-700:#E5484D; --red-800:#DC3E42; --red-900:#CE2C31;
+  --red-600:#E5484D;           /* алиас на red-700 (solid) — встречается в старых прототипах */
+  --green-100:#E6F6EB; --green-700:#30A46C; --green-900:#218358;
+  --green-600:#30A46C;         /* алиас на green-700 */
+  --blue-100:#E6F4FE; --blue-700:#0090FF; --blue-900:#0D74CE;
+  --blue-600:#0090FF;          /* алиас */
+  --orange-100:#FFEFD6; --orange-700:#F76B15; --orange-900:#CC4E00;
+  --orange-600:#F76B15;        /* алиас */
+  --violet-100:#F4F0FE; --violet-200:#EBE4FF; --violet-700:#6E56CF; --violet-900:#6550B9;
+  --violet-600:#6E56CF;        /* алиас */
+
+  /* shadows */
+  --shadow-pop:0px 20px 64px 0px rgba(28,32,36,0.18);
+  --shadow-menu:0px 6px 32px 0px rgba(28,32,36,0.12);
+}
