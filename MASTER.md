@@ -4,8 +4,8 @@ You are an agent in Claude Code. Follow this to build a clickable prototype.
 
 ## Before you start
 
-- Check that a code clone `../qato` sits next to this repo (only needed to refresh templates).
 - Update the ready-made screens and styles: `git pull`.
+- A code clone `qato` next to this repo (reachable as `../qato`) is needed only to add a screen that is not yet in the library or to refresh templates. Building on an existing screen does not need it. If you need it and it is missing, tell the user.
 
 ## Input
 
